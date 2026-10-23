@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para Sofia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8ECEE; --ink:#1B2530; --soft:#55626D; --accent:#2F5D6B; --line:#C3CCD2;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#11171D;--ink:#E7ECEF;--soft:#98A5AF;--accent:#8FBAC7;--line:#2A3640;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#11171D;--ink:#E7ECEF;--soft:#98A5AF;--accent:#8FBAC7;--line:#2A3640;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.2rem;line-height:1.65}
+main{max-width:34rem;margin:0 auto;padding:0 1.5rem 5rem}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:3rem}
+.glyph{width:min(78vw,22rem);height:auto;margin-bottom:2.2rem;overflow:visible}
+.glyph *{fill:none;stroke:var(--ink);stroke-linecap:round}
+.glyph .ring{stroke-width:15;stroke-dasharray:86 114;stroke-dashoffset:86;animation:draw 2.8s cubic-bezier(.5,0,.2,1) .2s forwards}
+.glyph .ring2{stroke-width:3;stroke:var(--accent);stroke-dasharray:62 138;stroke-dashoffset:62;animation:draw2 2.2s ease-out 1.6s forwards}
+.glyph .mane{stroke-width:4;opacity:0;animation:fade 1.4s ease-out 2.2s forwards}
+.glyph .mane.b{stroke-width:2.5}
+.glyph .mane.c{stroke-width:1.5}
+.glyph .dot{fill:var(--ink);stroke:none;opacity:0;animation:fade 1s ease-out 2.8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes draw2{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+h1{font-weight:300;font-size:clamp(2rem,7.5vw,3rem);line-height:1.15;margin:0 0 1rem;letter-spacing:-.01em}
+.sub{font-family:var(--sans);font-size:1rem;color:var(--soft);margin:0}
+section{padding:3.5rem 0 0}
+p{margin:0 0 1.2rem}
+.rule{border:0;border-top:1px solid var(--line);margin:3.5rem 0 0}
+h2{font-weight:400;font-style:italic;font-size:1.5rem;margin:0 0 1.2rem}
+dl{margin:0;font-family:var(--sans);font-size:1rem}
+dl div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+dt{color:var(--accent);font-weight:500}
+dd{margin:0;color:var(--soft)}
+.ask{text-align:center}
+.ask h2{font-style:normal;font-weight:300;font-size:clamp(1.9rem,7vw,2.6rem);line-height:1.2;margin-bottom:2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;align-items:center}
+button{font-family:var(--sans);font-size:1rem;font-weight:500;border-radius:999px;padding:.85rem 1.7rem;cursor:pointer;border:1px solid var(--ink);transition:transform .2s ease,background .2s ease}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#yes{background:var(--ink);color:var(--bg);transform:scale(var(--s,1))}
+#no{background:transparent;color:var(--ink)}
+.hint{min-height:3.2rem;margin:1.4rem auto 0;max-width:26rem;font-size:1rem;color:var(--soft);font-style:italic}
+.done{display:none;text-align:center}
+.done.on{display:block;animation:fade .9s ease-out forwards;opacity:0}
+.done h2{font-style:normal;font-weight:300;font-size:2rem}
+@media (max-width:30rem){dl div{grid-template-columns:1fr;gap:.2rem}}
+@media (prefers-reduced-motion:reduce){
+  .glyph .ring,.glyph .ring2{animation:none;stroke-dashoffset:0}
+  .glyph .mane,.glyph .dot{animation:none;opacity:1}
+  .done.on{animation:none;opacity:1}
+  button{transition:none}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <svg class="glyph" viewBox="0 0 400 400" role="img" aria-label="Símbolo circular desenhado a tinta, com crina ao vento">
+      <circle class="ring" cx="200" cy="200" r="118" pathLength="100" transform="rotate(-70 200 200)"/>
+      <circle class="ring2" cx="200" cy="200" r="94" pathLength="100" transform="rotate(110 200 200)"/>
+      <path class="mane" d="M296 108 C336 78 368 92 390 58"/>
+      <path class="mane b" d="M306 128 C350 112 372 128 396 112"/>
+      <path class="mane c" d="M284 92 C316 60 334 62 352 34"/>
+      <circle class="dot" cx="132" cy="262" r="6"/>
+    </svg>
+    <h1>Sofia, antes que você volte para o seu planeta</h1>
+    <p class="sub">Um convite terrestre, com cavalos.</p>
+  </header>
+
+  <section>
+    <p>Os heptápodes escrevem em círculos, sem começo nem fim, e enxergam o tempo todo de uma vez. Os cavalos dormem em pé e atravessam o campo sem pedir licença.</p>
+    <p>Eu só sei escrever em linha reta, então vou direto: gostaria de ter mais tempo com você.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Como ler um cavalo (e este convite)</h2>
+    <dl>
+      <div><dt>Orelhas para a frente</dt><dd>Estou curioso para saber a sua resposta.</dd></div>
+      <div><dt>Respiração calma</dt><dd>Sem pressa e sem pressão. Você pode responder à vontade.</dd></div>
+      <div><dt>Aproximação lenta</dt><dd>Um convite simples, de quem vai com calma.</dd></div>
+    </dl>
+  </section>
+
+  <hr class="rule">
+
+  <section class="ask" id="ask">
+    <h2>Quer sair comigo e dividir mais tempo do espaço?</h2>
+    <div class="actions">
+      <button id="yes" type="button">Quero</button>
+      <button id="no" type="button">Preciso pensar</button>
+    </div>
+    <p class="hint" id="hint" aria-live="polite"></p>
+  </section>
+
+  <section class="done" id="done" aria-live="polite">
+    <h2>Combinado.</h2>
+    <p>Aterrisse por aqui quando puder. Eu cuido do resto, e o planeta pode esperar.</p>
+    <p class="sub">Agora é só me avisar o dia.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  var yes=document.getElementById('yes'),no=document.getElementById('no');
+  var hint=document.getElementById('hint'),ask=document.getElementById('ask'),done=document.getElementById('done');
+  var lines=[
+    'Pense à vontade. Os heptápodes dizem que a resposta já existe.',
+    'Em A Chegada, quem aprende a língua deles passa a ver o futuro. Dá uma espiada.',
+    'Nenhum cavalo recusou ainda uma maçã. Eu sou só uma pessoa tentando.',
+    'Última tentativa antes de a nave partir: que tal um sim?'
+  ];
+  var n=0;
+  no.addEventListener('click',function(){
+    hint.textContent=lines[Math.min(n,lines.length-1)];
+    n++;
+    yes.style.setProperty('--s',Math.min(1+n*0.12,1.6));
+    if(n>=lines.length){no.textContent='Quero, tá bom'}
+    if(n>lines.length){yes.click()}
+  });
+  yes.addEventListener('click',function(){
+    ask.style.display='none';
+    done.classList.add('on');
+    done.scrollIntoView({block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
